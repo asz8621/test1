@@ -20,14 +20,11 @@ const slideNext = () => {
 	roomSwiper.value.$el.swiper.slideNext();
 };
 
-// 取得環境變數API
-const {
-	public: { apiBaseUrl },
-} = useRuntimeConfig();
+const API_URL = useApiUrl();
 
 // 最新消息
 const { data: newsData, error: newsError } = await useFetch('/home/news', {
-	baseURL: apiBaseUrl,
+	baseURL: API_URL,
 	transform: (response) => {
 		const { result } = response;
 		// console.log('result', result);
@@ -43,7 +40,7 @@ if (newsError.value) {
 const { data: culinaryData, error: culinaryError } = await useFetch(
 	'/home/culinary',
 	{
-		baseURL: apiBaseUrl,
+		baseURL: API_URL,
 		transform: (response) => {
 			const { result } = response;
 			// console.log('result', result);
@@ -61,7 +58,7 @@ const { data: culinaryData, error: culinaryError } = await useFetch(
 if (culinaryError.value) {
 	console.error('無法載入佳餚美饌，請稍後再試。');
 }
-console.log('apiBaseUrl', apiBaseUrl);
+console.log('API_URL', API_URL);
 </script>
 
 <template>
