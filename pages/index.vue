@@ -58,6 +58,7 @@ const { data: culinaryData, error: culinaryError } = await useFetch(
 if (culinaryError.value) {
 	console.error('無法載入佳餚美饌，請稍後再試。');
 }
+console.log('API_URL', API_URL);
 </script>
 
 <template>
