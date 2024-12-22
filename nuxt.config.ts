@@ -11,7 +11,7 @@ export default defineNuxtConfig({
   modules: ["@pinia/nuxt"],
   runtimeConfig: {
     public: {
-      apiBaseUrl: process.env.NUXT_API_BASE_URL || "http://localhost:3000/api",
+      apiBaseUrl: "https://freyja-ob3p.onrender.com/api/v1",
     },
   },
 })
